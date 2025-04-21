@@ -8,17 +8,32 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dbgen:prod": "drizzle-kit generate --config=drizzle-prod.config.ts",
+    "dbgen:dev": "drizzle-kit generate --config=drizzle-dev.config.ts",
+    "dbpush:prod": "drizzle-kit push --config=drizzle-prod.config.ts",
+    "dbpush:dev": "drizzle-kit push --config=drizzle-dev.config.ts",
+    "dbstudio:dev": "drizzle-kit studio --config=drizzle-dev.config.ts",
+    "dbmigrate:dev": "drizzle-kit migrate --config=drizzle-dev.config.ts",
+    "dbmigrate:prod": "drizzle-kit migrate --config=drizzle-prod.config.ts",
+    "dbpull:dev": "drizzle-kit pull --config=drizzle-dev.config.ts",
+    "dbpull:prod": "drizzle-kit pull --config=drizzle-prod.config.ts",
+    "seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.4",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.42.0",
+    "drizzle-seed": "^0.3.1",
+    "better-auth": "^1.2.7",
+    "next": "15.3.1",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@radix-ui/react-slot": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.503.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,6 +42,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "eslint-config-prettier": "^10.1.2",
@@ -37,6 +53,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
