@@ -1,7 +1,7 @@
 import { db } from "@/db";
-import { usersTable } from "@/db/schema";
+import { user } from "@/db/schema";
 
 export const fetchUsers = async () => {
-  const users = await db.select().from(usersTable);
+  const users = await db.select().from(user);
   return users;
 };
