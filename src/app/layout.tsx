@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 
@@ -16,6 +17,8 @@ export default function RootLayout({
         <Providers attribute="class" defaultTheme="system" enableSystem>
           {children}
         </Providers>
+        {/* ? Google Analytics */}
+        <GoogleAnalytics gaId="" />
       </body>
     </html>
   );
