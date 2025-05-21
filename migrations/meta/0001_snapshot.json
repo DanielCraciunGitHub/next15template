@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "519323e8-954b-4ca1-b8fb-51654331bcb6",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "1b5f34df-85d0-46c9-8e24-13739deff66d",
+  "prevId": "519323e8-954b-4ca1-b8fb-51654331bcb6",
   "tables": {
     "account": {
       "name": "account",
@@ -104,88 +104,6 @@
         "account_user_id_user_id_fk": {
           "name": "account_user_id_user_id_fk",
           "tableFrom": "account",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "checkConstraints": {}
-    },
-    "session": {
-      "name": "session",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "expires_at": {
-          "name": "expires_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "token": {
-          "name": "token",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "ip_address": {
-          "name": "ip_address",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "user_agent": {
-          "name": "user_agent",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "user_id": {
-          "name": "user_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        }
-      },
-      "indexes": {
-        "session_token_unique": {
-          "name": "session_token_unique",
-          "columns": ["token"],
-          "isUnique": true
-        }
-      },
-      "foreignKeys": {
-        "session_user_id_user_id_fk": {
-          "name": "session_user_id_user_id_fk",
-          "tableFrom": "session",
           "tableTo": "user",
           "columnsFrom": ["user_id"],
           "columnsTo": ["id"],
